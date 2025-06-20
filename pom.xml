@@ -7,6 +7,10 @@
   <groupId>org.mystore</groupId>
   <artifactId>ms_starter_parent</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <name>Mystore Starter Parent</name>
+  <description>Starter Parent for Mystore microservices</description>
+  <packaging>pom</packaging>
+
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -33,12 +37,15 @@
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <lombok.version>1.18.34</lombok.version>
     <commons.lang3.version>3.12.0</commons.lang3.version>
-    <commons.collections4.version>4.4</commons.collections4.version>
-    <jsonwebtoken.version>0.11.1</jsonwebtoken.version>
+     <jsonwebtoken.version>0.11.1</jsonwebtoken.version>
     <feign.micrometer.version>13.3</feign.micrometer.version>
+    <lombok.version>1.18.34</lombok.version>
+    <resilience4j.version>2.1.0</resilience4j.version>
+    <commons.collections4.version>4.4</commons.collections4.version>
+    <javax.xml.bind-jaxb-api.version>2.3.1</javax.xml.bind-jaxb-api.version>
 
   </properties>
-
+<dependencyManagement>
   <dependencies>
 
     <dependency>
@@ -144,9 +151,28 @@
       <artifactId>feign-micrometer</artifactId>
       <version>${feign.micrometer.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>io.github.resilience4j</groupId>
+      <artifactId>resilience4j-spring-boot3</artifactId>
+      <version>${resilience4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>${commons.collections4.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>${javax.xml.bind-jaxb-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.airretailer</groupId>
+      <artifactId>ar-kafka-schema</artifactId>
+      <version>${ar.kafka.schema.version}</version>
+    </dependency>
   </dependencies>
-
+</dependencyManagement>
 
   <build>
     <plugins>
